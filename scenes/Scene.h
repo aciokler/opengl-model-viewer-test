@@ -9,8 +9,8 @@
 #ifndef OpenGLOtherTest_Scene_h
 #define OpenGLOtherTest_Scene_h
 
-#include "declarations.h"
-#include "Shape.h"
+#include "../common/declarations.h"
+#include "../shapes/Shape.h"
 
 class Scene
 {
@@ -18,7 +18,7 @@ public:
     
     Scene()
     {
-        
+
     }
     
     virtual void prepareScene() = 0;

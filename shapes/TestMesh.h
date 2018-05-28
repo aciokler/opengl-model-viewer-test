@@ -9,7 +9,6 @@
 #ifndef __OpenGLOtherTest__TestMesh__
 #define __OpenGLOtherTest__TestMesh__
 
-#include "declarations.h"
 #include "Shape.h"
 
 

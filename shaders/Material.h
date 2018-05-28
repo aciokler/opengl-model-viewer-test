@@ -9,7 +9,7 @@
 #ifndef Material_h
 #define Material_h
 
-#include "declarations.h"
+#include "../common/declarations.h"
 
 class Material {
     

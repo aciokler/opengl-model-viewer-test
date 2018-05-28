@@ -9,7 +9,7 @@
 #ifndef OpenGLOtherTest_MeshLoader_h
 #define OpenGLOtherTest_MeshLoader_h
 
-#include "declarations.h"
+#include "../common/declarations.h"
 
 class MeshLoader
 {

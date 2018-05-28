@@ -10,17 +10,17 @@
 
 Cube::Cube()
 {
-    if ( !shader->bindShader("shader.vs", GL_VERTEX_SHADER) )
+    if ( !shader->bindShader("../shaders/shader.vs", GL_VERTEX_SHADER) )
     {
         return;
     }
     
-    if ( !shader->bindShader("normals.gs", GL_GEOMETRY_SHADER) )
+    if ( !shader->bindShader("../shaders/normals.gs", GL_GEOMETRY_SHADER) )
     {
         return;
     }
     
-    if ( !shader->bindShader("shader.fs", GL_FRAGMENT_SHADER) )
+    if ( !shader->bindShader("../shaders/shader.fs", GL_FRAGMENT_SHADER) )
     {
         return;
     }

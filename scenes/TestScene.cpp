@@ -7,17 +7,17 @@
 //
 
 #include "TestScene.h"
-#include "Cube.h"
-#include "Mesh.h"
-#include "ObjMeshExperiment.h"
-#include "TestMesh.h"
+#include "../shapes/Cube.h"
+#include "../shapes/Mesh.h"
+#include "../shapes/ObjMeshExperiment.h"
+#include "../shapes/TestMesh.h"
 #include <unistd.h>
 
 void TestScene::prepareScene()
 {
     char * buf = new char[256];
     
-    std::cout << "current directory " << getcwd( buf, 256) << std::endl;
+    //std::cout << "current directory " << getcwd( buf, 256) << std::endl;
     
     //Cube * cube = new Cube();
     //Shape * mesh = new ObjMeshExperiment("Lara_Croft.obj");//new ObjMeshExperiment("Lara_Croft.obj");//new ObjMeshExperiment("monkeySphere.obj");//new ObjMeshExperiment( "monkeyLowPoly.obj" );//new Mesh( "cubeGroupBasic.obj" );//new TestMesh();//new Mesh( "cube.obj" );///new TestMesh();//new Mesh( "simplePlane.obj" );//new Mesh( "simplePlaneGroups.obj" );//new Mesh( "simpleGroup.obj" );//new Mesh( "groupTest.obj" );//new Mesh( "cube.obj" ); //new Mesh( "groupTest.obj" ); new Mesh( "sls_amg_scaled.obj" ); /*new Mesh( "STI_scaled.obj" ); ( "Aventador.obj" ); //( "Porshe_911_GT2.obj" );*/
@@ -26,7 +26,7 @@ void TestScene::prepareScene()
     //Shape * mesh = new ObjMeshExperiment("UVplane.obj");
     //Shape * mesh3 = new ObjMeshExperiment("Triss.obj");
     //Shape * mesh4 = new ObjMeshExperiment("Porshe_911_GT2.obj");
-    Shape * mesh4 = new ObjMeshExperiment("sls_amg_scaled.obj");
+    Shape * mesh4 = new ObjMeshExperiment("../models/groupTest.obj");
     
     
     //printf("mesh addresses VBO[POSITIONS_BUFF]: %d, VBO[INDEX_BUFF]: %d, VAO[0]: %d\n", mesh->getVBOPointer(Shape::POSITIONS_BUFF), mesh->getVBOPointer(Shape::INDEX_BUFF), mesh->getVAOPointer(0) );

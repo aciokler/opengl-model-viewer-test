@@ -9,8 +9,8 @@
 #ifndef OpenGLOtherTest_Shape_h
 #define OpenGLOtherTest_Shape_h
 
-#include "declarations.h"
-#include "Shader.h"
+#include "../common/declarations.h"
+#include "../shaders/Shader.h"
 
 class Shape
 {
@@ -120,7 +120,7 @@ public:
         }
     }
     
-    static enum
+    enum
     {
         POSITIONS_BUFF,
         INDEX_BUFF,

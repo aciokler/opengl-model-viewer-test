@@ -7,8 +7,8 @@
 //
 
 #include "Mesh.h"
-#include "ObjMeshLoader.h"
-#include "ObjMeshLoader2Passes.h"
+#include "../meshloader/ObjMeshLoader.h"
+#include "../meshloader/ObjMeshLoader2Passes.h"
 
 static void print( const glm::vec3 * array, const GLint length, const std::string str )
 {
@@ -184,12 +184,12 @@ Mesh::Mesh( const GLchar * path )
         return;
     }
     
-    if ( !shader->bindShader("shader.vs", GL_VERTEX_SHADER) )
+    if ( !shader->bindShader("../shaders/shader.vs", GL_VERTEX_SHADER) )
     {
         return;
     }
     
-    if ( !shader->bindShader("shader.fs", GL_FRAGMENT_SHADER) )
+    if ( !shader->bindShader("../shaders/shader.fs", GL_FRAGMENT_SHADER) )
     {
         return;
     }

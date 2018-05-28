@@ -9,7 +9,6 @@
 #ifndef __OpenGLOtherTest__Cube__
 #define __OpenGLOtherTest__Cube__
 
-#include "declarations.h"
 #include "Shape.h"
 
 class Cube : public Shape

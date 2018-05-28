@@ -9,7 +9,7 @@
 #ifndef __OpenGLOtherTest__Shader__
 #define __OpenGLOtherTest__Shader__
 
-#include "declarations.h"
+#include "../common/declarations.h"
 
 typedef enum
 {

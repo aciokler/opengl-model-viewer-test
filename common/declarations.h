@@ -21,6 +21,7 @@
 #include <set>
 #include <map>
 #include <stdexcept>
+#include <algorithm>
 
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>

@@ -15,13 +15,13 @@ class TestScene : public Scene
 {
 public:
     
-    TestScene()
-    {
+    TestScene() {
         prepareScene();
     }
     
     void prepareScene();
-    virtual ~TestScene()
+    
+    ~TestScene()
     {
         
     }

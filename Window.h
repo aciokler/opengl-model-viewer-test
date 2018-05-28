@@ -9,14 +9,14 @@
 #ifndef __OpenGLOtherTest__Window__
 #define __OpenGLOtherTest__Window__
 
-#include "declarations.h"
-#include "Scene.h"
+#include "common/declarations.h"
+#include "scenes/Scene.h"
 
 class Window
 {
 public:
     
-    Window( GLint width, GLint, std::string windowTitle );
+    Window( GLint width, GLint height, std::string windowTitle );
     virtual ~Window()
     {
         printf("deleting the window\n");
@@ -24,6 +24,10 @@ public:
         glfwTerminate();
         
         delete scene;
+    }
+    
+    void getSomething() {
+        
     }
     
     GLFWwindow * getHandle() const;
