@@ -9,4 +9,4 @@ SRC = ../*.cpp ../shaders/*.cpp ../meshloader/*.cpp ../scenes/*.cpp ../shapes/*.
 
 all:
 	${CC} ${FLAGS} ${FRAMEWORKS} -o ${BIN} ${SRC} ${INC} ${LOC_LIB}
-	
+	rm -f *.gcda *.gcno *.o	
