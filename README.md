@@ -9,7 +9,9 @@ Compile and run:
 Mac OS X:
 
 cd Make
+
 make -f MakeMacOSX
+
 ./modelViewer
 
 ..enjoy
