@@ -23,6 +23,10 @@
 #include <stdexcept>
 #include <algorithm>
 
+#if defined(__linux__)
+	#include "glad.h"
+#endif
+
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
