@@ -31,6 +31,9 @@ Window::Window( GLint width, GLint height, std::string windowTitle )
     }
     
     glfwMakeContextCurrent(handle);
+    #if defined(__linux__) // GLAD is only used in Linux
+        gladLoadGLLoader((GLADloadproc) glfwGetProcAddress); // add GLAD init
+    #endif
     std::cout << glGetString(GL_VERSION) << std::endl;
     std::cout << glGetString(GL_VENDOR) << std::endl;
     std::cout << glGetString(GL_RENDERER) << std::endl;
