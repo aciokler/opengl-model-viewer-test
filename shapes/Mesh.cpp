@@ -8,7 +8,6 @@
 
 #include "Mesh.h"
 #include "../meshloader/ObjMeshLoader.h"
-#include "../meshloader/ObjMeshLoader2Passes.h"
 
 static void print( const glm::vec3 * array, const GLint length, const std::string str )
 {
@@ -48,7 +47,7 @@ Mesh::Mesh( const GLchar * path )
     if ( extension == "obj" )
     {
         //printf("went inside the loader\n");
-        meshLoader =  new ObjMeshLoader2Passes( path );//new ObjMeshLoader( path );
+        meshLoader =  new ObjMeshLoader( path );//new ObjMeshLoader( path );
         
         groups = meshLoader->getGroups();
         

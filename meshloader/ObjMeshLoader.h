@@ -1,13 +1,13 @@
 //
-//  ObjMeshLoader.h
+//  ObjMeshLoaderMilestone1.hpp
 //  OpenGLOtherTest
 //
-//  Created by Abraham-mac on 7/1/14.
-//  Copyright (c) 2014 Abraham-mac. All rights reserved.
+//  Created by Abraham-mac on 7/8/16.
+//  Copyright © 2016 Abraham-mac. All rights reserved.
 //
 
-#ifndef __OpenGLOtherTest__ObjMeshLoader__
-#define __OpenGLOtherTest__ObjMeshLoader__
+#ifndef ObjMeshLoader_h
+#define ObjMeshLoader_h
 
 #include "MeshLoader.h"
 
@@ -29,4 +29,4 @@ public:
     void loadFromFile( const GLchar * path );
 };
 
-#endif /* defined(__OpenGLOtherTest__ObjMeshLoader__) */
+#endif /* ObjMeshLoader_h */

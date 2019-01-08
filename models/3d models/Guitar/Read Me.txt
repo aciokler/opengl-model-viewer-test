@@ -1,0 +1,10 @@
+This model is created inside Cinema4D and it is created by the User "Urnyth".
+
+Included are just some basic VRay-Shaders.
+NO Lighting!
+
+Textures from CGTextures and Google Images.
+
+Theres actually not a reference-model to this guitar.
+
+Hope you like it! :)

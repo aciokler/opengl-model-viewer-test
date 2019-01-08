@@ -7,13 +7,7 @@
 //
 
 #include "ObjMeshExperiment.h"
-#include "../meshloader/ObjMeshLoaderExperiment.h"
-#include "../meshloader/ObjMeshLoader2Passes.h"
-#include "../meshloader/ObjMeshLoaderFasterExperiment.h"
-#include "../meshloader/ObjMeshLoaderSmoothNormalsExperiment.h"
-#include "../meshloader/ObjMeshLoaderQuadsExperiment.h"
-#include "../meshloader/ObjMeshLoaderLatestFixingBugs.h"
-#include "../meshloader/ObjMeshLoaderMilestone1.h"
+#include "../meshloader/ObjMeshLoader.h"
 
 void ObjMeshExperiment::initWithObjects( const std::vector<glm::vec3> * meshVertices, const std::vector<glm::vec3> * meshNormals )
 {
@@ -209,13 +203,7 @@ ObjMeshExperiment::ObjMeshExperiment( const GLchar * path )
     //ObjMeshLoader2Passes * meshLoader = NULL;
     if ( extension == "obj" )
     {
-        //meshLoader =  new ObjMeshLoader2Passes( path );
-        //meshLoader = new ObjMeshLoaderExperiment( path );
-        //meshLoader = new ObjMeshLoaderFasterExperiment( path );
-        //meshLoader = new ObjMeshLoaderSmoothNormalsExperiment( path );
-        //meshLoader = new ObjMeshLoaderQuadsExperiment( path );
-        //meshLoader = new ObjMeshLoaderMilestone1( path );
-        meshLoader = new ObjMeshLoaderLatestFixingBugs( path );
+        meshLoader = new ObjMeshLoader( path );
         
         //objects = meshLoader->getObjects();
         //if ( objects )
