@@ -25,6 +25,7 @@ void TestScene::prepareScene()
     //Shape * mesh2 = new ObjMeshExperiment("AventadorTriangulated.obj");
     //Shape * mesh = new ObjMeshExperiment("UVplane.obj");
     //Shape * ciri = new ObjMeshExperiment("../models/3d models/Ciri/ciri.obj");
+    Shape * lara = new ObjMeshExperiment("../models/Lara_Croft.obj");
     Shape * porsche = new ObjMeshExperiment("../models/Porsche_911_GT2.obj");
     Shape * groupTest = new ObjMeshExperiment("../models/groupTest.obj");
     
@@ -37,6 +38,7 @@ void TestScene::prepareScene()
     //objects.push_back(mesh3);
     //objects.push_back(cube);
     //objects.push_back(ciri);
+    objects.push_back(lara);
     objects.push_back(porsche);
-    //objects.push_back(groupTest);
+    objects.push_back(groupTest);
 }

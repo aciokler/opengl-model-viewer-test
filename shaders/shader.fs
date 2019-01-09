@@ -19,14 +19,14 @@ void main()
     //fragData = vec4( vec3(f_color2.x, f_color2.y, f_color2.z), 1.0 );
     
     const vec3 diffuseColor = vec3(0.9, 0.6, 0.6);
-    const vec3 specColor = vec3(0.5, 0.5, 0.5);
+    const vec3 specColor = vec3(0.3, 0.3, 0.3);
     
     //PHONG brdf
     vec3 lightDir = -vec3(0,0,1);
     vec3 viewDirection = -lightDir;
     
     //float ambientSharing =
-    float exponent = 4.0;
+    float exponent = 10.0;
     float lambertianShading = clamp( dot(lightDir, normal1), 0.0, 1.0 );
     float phongBrdf = pow( clamp(dot(reflect(lightDir,normal1), viewDirection), 0.0, 1.0), exponent);
     

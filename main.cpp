@@ -12,7 +12,7 @@
 
 int main(int argc, const char * argv[])
 {
-    Window* window = new Window( 800, 640, "Title test" );
+    Window* window = new Window( 1920, 1080, "Title test" );
     window->setScene(new TestScene());
     window->runRenderLoop();
     //TestScene* scene = new TestScene();
