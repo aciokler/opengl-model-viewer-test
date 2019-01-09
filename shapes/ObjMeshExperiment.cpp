@@ -26,7 +26,6 @@ void ObjMeshExperiment::initWithObjects( const std::vector<glm::vec3> * meshVert
         for ( int i = 0; i < obj.getGroups()->size(); i++ )
         {
             group = obj.getGroups()->at(i);
-            //verticesOrder[ i ] = new GLuint[ group.getIndices()->size() ];
             
             // vertices...
             for ( int j = 0; j < group.getIndices()->size(); j++ )
@@ -65,7 +64,6 @@ void ObjMeshExperiment::initWithGroups( const std::vector<glm::vec3> * meshVerti
     nr_groups = (GLuint)groups->size();
     
     vertices = new GLfloat[ meshVertices->size() * BUFFER_OFFSET_FACTOR ];
-    //verticesOrder = new GLuint * [ groups->size() ];
     SIZE = (GLuint)meshVertices->size()*BUFFER_OFFSET_FACTOR;
     
     Group group;
@@ -80,54 +78,36 @@ void ObjMeshExperiment::initWithGroups( const std::vector<glm::vec3> * meshVerti
     for ( int i = 0; i < groups->size(); i++ )
     {
         group = groups->at(i);
-        //verticesOrder[ i ] = new GLuint[ group.getIndices()->size() ];
-        
-//        // vertices...
-//        for ( int j = 0; j < group.getIndices()->size(); j++ )
-//        {
-//            GLuint index = group.getIndices()->at(j);
-//            verticesOrder[ i ][ j ] = index;
-//            
-//            glm::vec3 vertex = meshVertices->at( index );
-//            vertices[ index * BUFFER_OFFSET_FACTOR ] = vertex.x;
-//            vertices[ index * BUFFER_OFFSET_FACTOR + 1 ] = vertex.y;
-//            vertices[ index * BUFFER_OFFSET_FACTOR + 2 ] = vertex.z;
-//        }
-        
-        //std::cout << "group: " << i << std::endl;
         
         //faces...
         int vertexCount = 0;
         size_t size = group.getFaces()->size();
         for ( int j = 0; j < size; j++ )
-        {
-            //std::cout << "face: " << j << std::endl;
-            
+        {            
             Face face = group.getFaces()->at(j);
             for ( int p = 0; p < 3; p++, vertexCount++ )
             {
                 GLuint row = face.vertexIndices[p] * BUFFER_OFFSET_FACTOR;
                 
-                //std::cout << "vertex: " << vertexCount << ", vertex component: " << p << std::endl;
-                
+                // indices
                 elements[drawCount + vertexCount] = face.vertexIndices[p];
-                //verticesOrder[ i ][ vertexCount ] = face.vertexIndices[p];
-                //std::cout << "size: " << meshVertices->size() << ", index: " << face.vertexIndices[p] << std::endl;
                 glm::vec3 vertex = meshVertices->at( face.vertexIndices[p] );
                 
+                // vertices
                 vertices[ row ] = vertex.x;
                 vertices[ row + 1 ] = vertex.y;
                 vertices[ row + 2 ] = vertex.z;
                 
-                //glm::vec3 normal = meshNormals->at(face.normalInd);
-                //glm::vec3 normal = (sizeof(face.vertexNormalIndices) / sizeof(*face.vertexNormalIndices) == 1) ? meshNormals->at(0) : meshNormals->at(face.vertexNormalIndices[p]);
+                // normals
                 glm::vec3 normal = meshNormals->at(face.vertexNormalIndices[p]);
                 vertices[ row + 3 ] = normal.x;
                 vertices[ row + 4 ] = normal.y;
                 vertices[ row + 5 ] = normal.z;
-//                vertices[ row + 3 ] = face.normal.x;
-//                vertices[ row + 4 ] = face.normal.y;
-//                vertices[ row + 5 ] = face.normal.z;
+
+                // tangents
+                //vertices[ row + 6 ];
+                //vertices[ row + 7 ];
+                //vertices[ row + 8 ];
             }
         }
         drawCount += group.getIndices()->size();
@@ -142,8 +122,6 @@ void ObjMeshExperiment::prepareBuffers()
     VAO = new GLuint[ nr_groups ];
     positionLoc2 = new GLint[nr_groups];
     normalLoc2 = new GLint[nr_groups];
-    
-    
     
     std::cout << "total number of elements " << SIZE << std::endl;
     std::cout << "total size buffer " << (SIZE*sizeof(GLfloat)) << std::endl;
@@ -184,10 +162,6 @@ void ObjMeshExperiment::prepareBuffers()
     {
         Group group = groups->at(i);
         indicesCount[i] = (GLsizei)group.getIndices()->size();
-        
-        //glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, offset, group.getIndices()->size()*sizeof(GLuint), verticesOrder[i]);
-        
-        //offset += (GLuint)group.getIndices()->size()*sizeof(GLuint);
     }
     
     uniform_m_transform = shader->getUniform("m_transform");
@@ -199,17 +173,10 @@ ObjMeshExperiment::ObjMeshExperiment( const GLchar * path )
     std::string extension( str_path.substr( str_path.find_last_of( "." ) + 1 ) );
     
     MeshLoader * meshLoader = NULL;
-    //ObjMeshLoaderExperiment * meshLoader = NULL;
-    //ObjMeshLoader2Passes * meshLoader = NULL;
     if ( extension == "obj" )
     {
         meshLoader = new ObjMeshLoader( path );
-        
-        //objects = meshLoader->getObjects();
-        //if ( objects )
-        //    initWithObjects(meshLoader->getVertices(), meshLoader->getNormals());
         groups = meshLoader->getGroups();
-        //if ( groups )
         initWithGroups(meshLoader->getVertices(), meshLoader->getNormals());
         
         printf("# groups %zd\n", nr_groups);

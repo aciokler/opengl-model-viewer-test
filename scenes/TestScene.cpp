@@ -29,10 +29,6 @@ void TestScene::prepareScene()
     Shape * porsche = new ObjMeshExperiment("../models/Porsche_911_GT2.obj");
     Shape * groupTest = new ObjMeshExperiment("../models/groupTest.obj");
     
-    
-    //printf("mesh addresses VBO[POSITIONS_BUFF]: %d, VBO[INDEX_BUFF]: %d, VAO[0]: %d\n", mesh->getVBOPointer(Shape::POSITIONS_BUFF), mesh->getVBOPointer(Shape::INDEX_BUFF), mesh->getVAOPointer(0) );
-    //printf("mesh2 addresses VBO[POSITIONS_BUFF]: %d, VBO[INDEX_BUFF]: %d, VAO[0]: %d\n", mesh2->getVBOPointer(Shape::POSITIONS_BUFF), mesh2->getVBOPointer(Shape::INDEX_BUFF), mesh2->getVAOPointer(0) );
-    
     //objects.push_back( mesh );
     //objects.push_back( mesh2 );
     //objects.push_back(mesh3);

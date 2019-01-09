@@ -18,7 +18,6 @@ public:
     virtual ~MeshLoader()
     {
         delete groups;
-        
         delete vertices;
         delete normals;
         delete indices;
@@ -95,7 +94,6 @@ public:
         }
         
         return copy;
-
     }
     
     unsigned long getTotalVertices() const
